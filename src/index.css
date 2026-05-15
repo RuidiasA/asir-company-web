@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-asir-navy: #001a3d;
+  --color-asir-blue: #2563eb;
+  --color-asir-light: #f8fafc;
+  --font-sans: 'Segoe UI Variable', 'Segoe UI', Tahoma, sans-serif;
+}
+
+@layer base {
+  html { @apply scroll-smooth; }
+  body { 
+    @apply font-sans bg-white antialiased; 
+    text-rendering: optimizeLegibility;
+    margin: 0;
+  }
+}
+
+/* IMPORTANTE: Llamamos a los estilos de tus componentes aquí */
+@import "./App.css";
