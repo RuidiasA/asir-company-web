@@ -200,12 +200,4 @@
     .contact-form { @apply mt-7 gap-3; }
     .contact-form input, .contact-form textarea { @apply px-4 py-3; }
   }
-
-  /* Tablets and small laptops: add horizontal breathing room so forms don't touch edges */
-  @media (min-width: 360px) and (max-width: 1023px) {
-    .contact-section { @apply py-20; }
-    .contact-section__inner { @apply px-6; }
-    .contact-form { gap: 1rem; }
-    .contact-form input, .contact-form textarea { @apply px-5 py-3; }
-  }
 }

@@ -1,5 +1,5 @@
-import { MainLayout } from './layouts/MainLayout';
-import { Navbar } from './components/Navbar';
+import { MainLayout } from './layouts/mainLayout';
+import { Navbar } from './components/navBar';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { About } from './components/About';
