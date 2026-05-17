@@ -6,13 +6,15 @@ export const Hero = () => {
         <section id="inicio" className="hero-section hero-bg">
             <div className="hero-section__inner max-sm:grid-cols-1">
                 <div className="hero-copy">
-                    <p className="eyebrow">Automatización, servicios integrales y refrigeración</p>
-                    <h1 className="max-sm:text-2xl">
-                        Soluciones integrales en climatización y <span>refrigeración</span>
-                    </h1>
-                    <p className="hero-copy__lead">
-                        Brindamos servicios de alta calidad en aire acondicionado, ventilación, refrigeración y automatización. Eficiencia, innovación y compromiso en cada proyecto.
-                    </p>
+                    <div className="hero-actions">
+                        <p className="eyebrow">Automatización, servicios integrales y refrigeración</p>
+                        <h1 className="max-sm:text-2xl">
+                            Soluciones integrales en climatización y <span>refrigeración</span>
+                        </h1>
+                        <p className="hero-copy__lead">
+                            Brindamos servicios de alta calidad en aire acondicionado, ventilación, refrigeración y automatización. Eficiencia, innovación y compromiso en cada proyecto.
+                        </p>
+                    </div>
 
                     <div className="hero-actions">
                         <button type="button" className="button button--primary">
