@@ -1,4 +1,6 @@
 import { Clock3, Mail, MapPin, Phone } from 'lucide-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Navbar } from '../components/navBar';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
@@ -34,11 +36,27 @@ const formFields = [
 ];
 
 export const ContactPage = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash !== '#contact-title') {
+            return;
+        }
+
+        const element = document.getElementById('contact-title');
+
+        if (element) {
+            requestAnimationFrame(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    }, [location.hash]);
+
     return (
         <MainLayout>
             <Navbar />
             <main className="bg-slate-50 text-asir-navy">
-                <section className="relative isolate overflow-hidden bg-slate-900 py-20 sm:py-24">
+                <section className="relative isolate overflow-hidden bg-slate-900 py-12">
                     <div
                         className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: "url('/prueba.jpeg')" }}
@@ -46,7 +64,7 @@ export const ContactPage = () => {
                     />
                     <div className="absolute inset-0 -z-10 bg-black/60" aria-hidden="true" />
 
-                    <div className="max-w-xl flex flex-col px-4 sm:px-6 lg:px-8">
+                    <div className="container-custom flex flex-col">
                         <p className="mb-4 text-sm font-semibold tracking-[0.28em] text-asir-blue uppercase">
                             Contacto
                         </p>
@@ -54,7 +72,7 @@ export const ContactPage = () => {
                             Estamos listos para ayudarte con tu proyecto
                         </h1>
                         <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
-                            Contáctano y nuestro equipo te brindará la mejor solución en climatización, refrigeración, ventilación y automatización.
+                            Contáctanos y nuestro equipo te brindará la mejor solución en climatización, refrigeración, ventilación y automatización.
                         </p>
                     </div>
                 </section>

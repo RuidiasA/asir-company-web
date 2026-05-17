@@ -1,4 +1,5 @@
 import { ArrowRight, ClipboardPenLine } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { featureHighlights } from '../data/asirData';
 
 export const Hero = () => {
@@ -21,10 +22,10 @@ export const Hero = () => {
                             Nuestros servicios
                             <ArrowRight className="h-4 w-4" />
                         </button>
-                        <button type="button" className="button button--secondary">
+                        <Link to="/contacto#contact-title" className="button button--secondary">
                             <ClipboardPenLine className="h-4 w-4" />
                             Solicitar cotización
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

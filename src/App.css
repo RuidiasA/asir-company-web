@@ -17,10 +17,7 @@
   /* Branding */
   .brand { @apply flex items-center no-underline; }
   .brand__logo { @apply h-10 w-auto; }
-  .brand__waves { @apply h-7 w-7 text-asir-blue; }
-  .brand__text { @apply flex flex-col leading-none; }
-  .brand__text strong { @apply text-xl tracking-tight text-asir-navy; }
-  .brand__text small { @apply text-[10px] font-bold text-slate-500 uppercase tracking-widest; }
+  
 
   /* Navigation */
   .main-nav { @apply hidden md:flex items-center gap-10; }
@@ -35,8 +32,7 @@
   }
   .button--primary { @apply bg-asir-blue text-white hover:bg-blue-700 shadow-md; }
   .button--secondary { @apply border border-asir-blue text-asir-blue bg-asir-light hover:bg-blue-100; }
-  .button--ghost { @apply border border-white text-white hover:bg-white hover:text-asir-navy text-xs py-3; }
-  .button--full { @apply w-full justify-center md:col-span-2; }
+  
   
   .header-cta { 
     @apply cursor-pointer hidden lg:flex items-center gap-2 bg-asir-blue text-white uppercase px-8 py-3 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all;
@@ -57,7 +53,7 @@
     background: url('/prueba.jpeg') center center / cover no-repeat;
     pointer-events: none;
     z-index: 0;
-    filter: blur(3px);
+    filter: blur(4px);
   }
 
   .hero-bg::after {
@@ -75,7 +71,7 @@
   .hero-section__inner { @apply container-custom grid md:grid-cols-2 items-center; }
   .hero-copy{ @apply max-w-[60ch]; }
   
-  .eyebrow { @apply text-asir-blue font-bold text-xs uppercase mb-2 block; }
+  .eyebrow { @apply text-asir-blue font-semibold text-sm uppercase mb-2 block; }
   .hero-section h1 { @apply text-5xl font-bold text-asir-navy leading-[1.1] mb-4; }
   .hero-section h1 span { @apply text-asir-blue; }
   .hero-copy__lead { @apply font-semibold text-slate-500 max-w-lg text-sm mb-4 leading-relaxed; }
@@ -107,39 +103,15 @@
   .service-card__icon { @apply h-12 w-12 text-asir-blue mb-1 transition-transform hover:scale-110; }
   .service-card h3 { @apply text-sm font-semibold text-asir-navy uppercase tracking-wider; }
 
-  /* ABOUT SECTION (Dark) */
-  .about-section { @apply py-12 bg-asir-navy text-white; }
-  .about-section__inner { @apply container-custom grid lg:grid-cols-3 gap-16 items-center; }
-  .eyebrow--light { @apply text-blue-300; }
-  .about-copy h2 { @apply text-3xl md:text-2xl font-semibold mb-2 leading-tight; }
-  .about-copy p { @apply text-slate-300 mb-4 text-xs leading-relaxed; }
-
-  .stats-panel { @apply grid grid-cols-2 rounded-lg overflow-hidden; }
-  .stat-card { @apply p-4 flex flex-row gap-2; }
-  .stat-card__icon { @apply h-16 w-16 text-blue-400; }
-  .stat-card__item { @apply flex flex-col }
-
-  /* Inner-only borders to create a central cross; remove outer borders */
-  .stats-panel > :nth-child(1) { @apply border-r border-b border-slate-700/50; }
-  .stats-panel > :nth-child(2) { @apply border-l border-b border-slate-700/50; }
-  .stats-panel > :nth-child(3) { @apply border-r border-t border-slate-700/50; }
-  .stats-panel > :nth-child(4) { @apply border-l border-t border-slate-700/50; }
-  .stat-card strong { @apply text-xl mb-1; }
-  .stat-card span { @apply text-xs uppercase tracking-widest text-slate-400 font-bold; }
-
-  .video-card { @apply relative aspect-video bg-slate-800 rounded-2xl overflow-hidden shadow-2xl; }
-  .video-card__play { 
-    @apply absolute inset-0 m-auto h-16 w-16 bg-white text-asir-navy rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer;
-  }
-
   /* CONTACT SECTION */
-  .contact-section { @apply py-16 bg-asir-light; }
+  .contact-section { @apply py-8 bg-asir-light; }
+  .contact-section { scroll-margin-top: 6.5rem; }
   .contact-section__inner { @apply container-custom max-w-7xl text-asir-navy; }
-  .contact-section__header { @apply max-w-3xl mx-auto text-center mb-8 sm:mb-10; }
+  .contact-section__header { @apply max-w-4xl mx-auto text-center mb-8 sm:mb-10; }
   .contact-section__header h2 { @apply text-3xl sm:text-4xl font-bold tracking-tight mb-3; }
   .contact-section__header p { @apply text-sm sm:text-base text-slate-600 leading-relaxed; }
 
-  .contact-layout { @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start; }
+  .contact-layout { @apply grid grid-cols-1 lg:grid-cols-2 gap-8 items-start; }
   .contact-map { @apply overflow-hidden rounded-2xl shadow-md border border-slate-200 bg-white; }
   .contact-map iframe { @apply block w-full h-80 sm:h-90 lg:h-130 border-0; }
 
@@ -154,7 +126,7 @@
   .contact-form__field textarea { @apply min-h-35 resize-y; }
   .contact-form__submit { @apply mt-5 w-full justify-center py-3 px-6; }
 
-  .contact-cards { @apply mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6; }
+  .contact-cards { @apply mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8; }
   .contact-card { @apply flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md; }
   .contact-card__icon { @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-asir-light text-asir-blue; }
   .contact-card__label { @apply text-xs font-bold uppercase tracking-[0.16em] text-slate-500; }
@@ -164,7 +136,7 @@
   /* FOOTER */
   .site-footer { @apply bg-asir-navy text-white border-t border-white/10; }
   .site-footer__inner { @apply container-custom py-12; }
-  .site-footer__grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10; }
+  .site-footer__grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10; }
 
   .footer-branding { @apply max-w-sm; }
   .footer-branding__logo { @apply inline-flex items-center mb-5; }
@@ -177,7 +149,7 @@
   }
 
   .footer-social { @apply flex gap-4 mt-6; }
-  .footer-social__link { @apply flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-slate-200 transition-all duration-200 hover:border-asir-blue hover:bg-asir-blue hover:text-white; }
+  .footer-social__link { @apply flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-slate-200 transition-all duration-200 hover:border-asir-blue hover:bg-asir-blue hover:text-white; }
 
   .footer-column__title { @apply text-sm font-bold uppercase tracking-[0.24em] text-white mb-5; }
   .footer-list { @apply space-y-3; }

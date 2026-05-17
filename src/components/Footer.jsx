@@ -1,4 +1,4 @@
-import { ChevronRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { ChevronRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 
@@ -12,22 +12,23 @@ const services = [
 ];
 
 const quickLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Blog', 'Contacto'];
+const hiddenQuickLinks = new Set(['nosotros', 'servicios', 'proyectos', 'blog']);
 
 const contactItems = [
     {
         icon: Phone,
-        label: '+51 987 654 321',
-        href: 'tel:+51987654321',
+        label: '+51 953 054 689',
+        href: 'tel:+51953054689',
     },
     {
-        icon: MessageCircle,
-        label: '+51 912 345 678',
-        href: 'https://wa.me/51912345678',
+        icon: FaWhatsapp,
+        label: '+51 953 054 689',
+        href: 'https://wa.me/51953054689',
     },
     {
         icon: Mail,
-        label: 'info@asircompany.com',
-        href: 'mailto:info@asircompany.com',
+        label: 'm.martinez@asircompany.com',
+        href: 'mailto:m.martinez@asircompany.com',
     },
     {
         icon: MapPin,
@@ -39,7 +40,7 @@ const socialLinks = [
     { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com' },
     { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://linkedin.com' },
     { icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com' },
-    { icon: FaWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51912345678' },
+    { icon: FaWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51953054689' },
 ];
 
 export const Footer = () => {
@@ -62,7 +63,7 @@ export const Footer = () => {
                         <div className="footer-social" aria-label="Redes sociales">
                             {socialLinks.map(({ icon: Icon, label, href }) => (
                                 <a key={label} href={href} className="footer-social__link" aria-label={label} target="_blank" rel="noreferrer">
-                                    <Icon className="h-4 w-4" />
+                                    <Icon className="h-6 w-6" />
                                 </a>
                             ))}
                         </div>
@@ -77,32 +78,6 @@ export const Footer = () => {
                                         <ChevronRight className="h-4 w-4 text-blue-400" />
                                         <span>{service}</span>
                                     </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-
-                    <nav className="footer-column" aria-label="Enlaces rápidos">
-                        <h3 className="footer-column__title">ENLACES RÁPIDOS</h3>
-                        <ul className="footer-list">
-                            {quickLinks.map((link) => (
-                                <li key={link}>
-                                    {link === 'Contacto' ? (
-                                        <Link to="/contacto" className="footer-list__link">
-                                            <ChevronRight className="h-4 w-4 text-blue-400" />
-                                            <span>{link}</span>
-                                        </Link>
-                                    ) : link === 'Inicio' ? (
-                                        <Link to="/" className="footer-list__link">
-                                            <ChevronRight className="h-4 w-4 text-blue-400" />
-                                            <span>{link}</span>
-                                        </Link>
-                                    ) : (
-                                        <a href={`#${link.toLowerCase()}`} className="footer-list__link">
-                                            <ChevronRight className="h-4 w-4 text-blue-400" />
-                                            <span>{link}</span>
-                                        </a>
-                                    )}
                                 </li>
                             ))}
                         </ul>

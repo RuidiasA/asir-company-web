@@ -5,7 +5,7 @@ export const Contact = () => {
         <section id="contacto" className="contact-section">
             <div className="contact-section__inner">
                 <div className="contact-section__header">
-                    <h2>Hablemos de tu próximo proyecto</h2>
+                    <h2 id="contact-title" className="scroll-mt-28">Hablemos de tu próximo proyecto</h2>
                     <p>
                         Ubícanos, escríbenos o envíanos tu solicitud desde el formulario. Te responderemos con una propuesta clara y rápida.
                     </p>

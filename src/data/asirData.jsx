@@ -1,5 +1,15 @@
 import {
-    BadgeCheck, Cpu, Factory, ShieldCheck, ThermometerSnowflake, Users, Wind
+    BadgeCheck,
+    Cpu,
+    Factory,
+    ShieldCheck,
+    ThermometerSnowflake,
+    Users,
+    Wind,
+    Briefcase,
+    UserCheck,
+    Award,
+    Headphones,
 } from 'lucide-react';
 
 export const navLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Blog', 'Contacto'];
@@ -21,8 +31,8 @@ export const servicesList = [
 ];
 
 export const companyStats = [
-    { value: '+150', label: 'Proyectos Ejecutados', icon: Factory },
-    { value: '+80', label: 'Clientes Satisfechos', icon: ShieldCheck },
-    { value: '+12', label: 'Años de Experiencia', icon: Cpu },
-    { value: '24/7', label: 'Soporte Técnico', icon: Wind },
+    { value: '+20', label: 'Proyectos Ejecutados', icon: Briefcase },
+    { value: '+10', label: 'Clientes Satisfechos', icon: UserCheck },
+    { value: '+2', label: 'Años de Experiencia', icon: Award },
+    { value: '24/7', label: 'Soporte Técnico', icon: Headphones },
 ];
