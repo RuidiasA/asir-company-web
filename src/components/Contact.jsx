@@ -78,7 +78,7 @@ export const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`mt-12 inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold uppercase text-white shadow-md transition-all active:scale-95 ${submitStatus === 'success'
+                                className={`cursor-pointer mt-12 inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold uppercase text-white shadow-md transition-all active:scale-95 ${submitStatus === 'success'
                                     ? 'bg-green-500 hover:bg-green-600'
                                     : 'bg-asir-blue hover:bg-blue-700'
                                     } ${isSubmitting ? 'cursor-not-allowed opacity-80' : ''}`}
