@@ -4,51 +4,46 @@ import { featureHighlights } from '../data/asirData';
 
 export const Hero = () => {
     return (
-        <section id="inicio" className="hero-section hero-bg">
-            <div className="hero-section__inner max-sm:grid-cols-1">
-                <div className="hero-copy">
-                    <div className="hero-actions">
-                        <p className="eyebrow">Automatización, servicios integrales y refrigeración</p>
-                        <h1 className="max-sm:text-2xl">
-                            Soluciones integrales en climatización y <span>refrigeración</span>
+        <section id="inicio" className="relative flex items-center min-h-[85vh] py-20 lg:py-16 overflow-hidden">
+            <img
+                src="/prueba.jpeg"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-right z-0"
+            />
+            <div className="absolute inset-0 bg-white/90 md:bg-transparent md:bg-linear-to-r md:from-white md:via-white/90 md:to-transparent z-0" />
+
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div className="max-w-[65ch] space-y-10">
+                    <div className="space-y-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-asir-blue">
+                            Automatización, servicios integrales y refrigeración
+                        </p>
+                        <h1 className="text-4xl font-bold leading-tight text-asir-navy md:text-5xl">
+                            Soluciones integrales en climatización y <span className="text-asir-blue">refrigeración</span>
                         </h1>
-                        <p className="hero-copy__lead">
+                        <p className="max-w-lg text-sm font-semibold leading-relaxed text-slate-600 sm:text-base">
                             Brindamos servicios de alta calidad en aire acondicionado, ventilación, refrigeración y automatización. Eficiencia, innovación y compromiso en cada proyecto.
                         </p>
                     </div>
 
-                    <div className="hero-actions">
-                        <button type="button" className="button button--primary">
-                            Nuestros servicios
-                            <ArrowRight className="h-4 w-4" />
-                        </button>
-                        <Link to="/contacto#contact-title" className="button button--secondary">
-                            <ClipboardPenLine className="h-4 w-4" />
+                    <div>
+                        <Link
+                            to="/contacto#contact-form"
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-transparent px-5 py-4 text-sm font-semibold uppercase text-blue-600 shadow-sm transition hover:bg-blue-50 active:scale-95 sm:w-auto"
+                        >
+                            <ClipboardPenLine className="h-5 w-5" />
                             Solicitar cotización
                         </Link>
                     </div>
-                </div>
 
-                <div className="hero-visual" aria-hidden="true">
-                    <div className="hero-visual__sky" />
-                    <div className="hero-visual__cloud hero-visual__cloud--one" />
-                    <div className="hero-visual__cloud hero-visual__cloud--two" />
-                    <div className="hero-visual__pipe hero-visual__pipe--top" />
-                    <div className="hero-visual__pipe hero-visual__pipe--mid" />
-                    <div className="hero-visual__pipe hero-visual__pipe--bottom" />
-                    <div className="hero-visual__unit hero-visual__unit--left" />
-                    <div className="hero-visual__unit hero-visual__unit--main">
-                        <div className="hero-visual__fan hero-visual__fan--top" />
-                        <div className="hero-visual__fan hero-visual__fan--bottom" />
-                        <div className="hero-visual__vents" />
-                    </div>
-                    <div className="hero-visual__tower" />
+                    <hr className="border-slate-200/60" />
 
-                    <div className="hero-features">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-2 mt-8">
                         {featureHighlights.map(({ icon: Icon, text }) => (
-                            <div key={text} className="hero-feature">
-                                <Icon className="hero-feature__icon" />
-                                <span>{text}</span>
+                            <div key={text} className="flex items-center gap-3">
+                                <Icon className="h-6 w-6 shrink-0 text-asir-blue md:h-7 md:w-7" />
+                                <span className="text-xs font-bold leading-tight text-slate-800 sm:text-sm">{text}</span>
                             </div>
                         ))}
                     </div>

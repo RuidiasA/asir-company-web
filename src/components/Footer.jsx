@@ -11,70 +11,83 @@ const services = [
     'Servicios Integrales',
 ];
 
-const quickLinks = ['Inicio', 'Nosotros', 'Servicios', 'Proyectos', 'Blog', 'Contacto'];
-const hiddenQuickLinks = new Set(['nosotros', 'servicios', 'proyectos', 'blog']);
-
 const contactItems = [
     {
+        id: 'phone',
         icon: Phone,
         label: '+51 953 054 689',
         href: 'tel:+51953054689',
     },
     {
+        id: 'whatsapp',
         icon: FaWhatsapp,
         label: '+51 953 054 689',
         href: 'https://wa.me/51953054689',
+        target: '_blank',
     },
     {
+        id: 'email',
         icon: Mail,
         label: 'm.martinez@asircompany.com',
         href: 'mailto:m.martinez@asircompany.com',
     },
     {
+        id: 'address',
         icon: MapPin,
         label: 'Av. Los Constructores 123, Oficina 401\nUrbanización Ingeniería, Lima 15023, Perú',
     },
 ];
 
 const socialLinks = [
-    { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com' },
-    { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com' },
-    { icon: FaWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51953054689' },
+    { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com', target: '_blank' },
+    { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://linkedin.com', target: '_blank' },
+    { icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com', target: '_blank' },
+    { icon: FaWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51953054689', target: '_blank' },
 ];
 
 export const Footer = () => {
+    const handleLogoClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <footer className="site-footer" aria-labelledby="footer-heading">
-            <div className="site-footer__inner">
+        <footer className="border-t border-white/10 bg-asir-navy text-white" aria-labelledby="footer-heading">
+            <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 <h2 id="footer-heading" className="sr-only">
                     Footer de ASIR Company EIRL
                 </h2>
 
-                <div className="site-footer__grid">
-                    <section className="footer-branding" aria-label="Branding y redes sociales">
-                        <Link className="footer-branding__logo" to="/" aria-label="ASIR Company EIRL">
-                            <img src="/logotipo.svg" alt="ASIR Company EIRL" />
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+                    <section className="flex max-w-xs flex-col" aria-label="Branding y redes sociales">
+                        <Link className="mb-5 inline-flex items-center" to="/" aria-label="ASIR Company EIRL" onClick={handleLogoClick}>
+                            <img src="/logotipo.svg" alt="ASIR Company EIRL" className="h-12 w-auto brightness-0 invert" />
                         </Link>
-                        <p className="footer-branding__lead">
+                        <p className="text-sm leading-relaxed text-slate-300">
                             Brindamos soluciones integrales en climatización, refrigeración, ventilación y automatización, con calidad, eficiencia e innovación.
                         </p>
 
-                        <div className="footer-social" aria-label="Redes sociales">
+                        <div className="mt-6 flex flex-wrap gap-4" aria-label="Redes sociales">
                             {socialLinks.map(({ icon: Icon, label, href }) => (
-                                <a key={label} href={href} className="footer-social__link" aria-label={label} target="_blank" rel="noreferrer">
+                                <a
+                                    key={label}
+                                    href={href}
+                                    className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-slate-200 transition-all duration-200 hover:border-asir-blue hover:bg-asir-blue hover:text-white"
+                                    aria-label={label}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <Icon className="h-6 w-6" />
                                 </a>
                             ))}
                         </div>
                     </section>
 
-                    <nav className="footer-column" aria-label="Servicios">
-                        <h3 className="footer-column__title">SERVICIOS</h3>
-                        <ul className="footer-list">
+                    <nav aria-label="Servicios">
+                        <h3 className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-white">SERVICIOS</h3>
+                        <ul className="space-y-3">
                             {services.map((service) => (
                                 <li key={service}>
-                                    <a href="#servicios" className="footer-list__link">
+                                    <a href="#servicios" className="flex items-center gap-2 text-sm text-slate-300 transition-all duration-200 hover:translate-x-1 hover:text-white">
                                         <ChevronRight className="h-4 w-4 text-blue-400" />
                                         <span>{service}</span>
                                     </a>
@@ -83,23 +96,25 @@ export const Footer = () => {
                         </ul>
                     </nav>
 
-                    <section className="footer-column" aria-label="Información de contacto">
-                        <h3 className="footer-column__title">CONTÁCTANOS</h3>
-                        <ul className="footer-contact-list">
-                            {contactItems.map(({ icon: Icon, label, href }) => (
-                                <li key={label} className="footer-contact-item">
-                                    <Icon className="footer-contact-item__icon" />
+                    <section aria-label="Información de contacto">
+                        <h3 className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-white">CONTÁCTANOS</h3>
+                        <ul className="mt-4 space-y-4">
+                            {contactItems.map(({ id, icon: Icon, label, href, target }) => (
+                                <li key={id} className="flex items-start gap-3">
+                                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
                                     <div>
                                         {href ? (
-                                            <a href={href} className="footer-contact-item__link">
+                                            <a href={href} target={target} className="text-sm leading-relaxed text-slate-300 wrap-break-word hover:text-white">
                                                 {label}
                                             </a>
                                         ) : (
-                                            <p className="footer-contact-item__text">{label.split('\n').map((line) => (
-                                                <span key={line} className="block">
-                                                    {line}
-                                                </span>
-                                            ))}</p>
+                                            <p className="text-sm leading-relaxed text-slate-300 wrap-break-word">
+                                                {label.split('\n').map((line) => (
+                                                    <span key={line} className="block">
+                                                        {line}
+                                                    </span>
+                                                ))}
+                                            </p>
                                         )}
                                     </div>
                                 </li>

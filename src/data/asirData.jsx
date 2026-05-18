@@ -4,6 +4,8 @@ import {
     Factory,
     ShieldCheck,
     ThermometerSnowflake,
+    Wrench,
+    Fan,
     Users,
     Wind,
     Briefcase,
@@ -22,12 +24,12 @@ export const featureHighlights = [
 ];
 
 export const servicesList = [
-    { icon: ThermometerSnowflake, title: 'Aire Acondicionado' },
+    { icon: Fan, title: 'Aire Acondicionado' },
     { icon: Wind, title: 'Ductería y Ventilación' },
-    { icon: Factory, title: 'Refrigeración Industrial' },
+    { icon: ThermometerSnowflake, title: 'Refrigeración Industrial' },
     { icon: Cpu, title: 'Automatización y Control' },
-    { icon: ShieldCheck, title: 'Mantenimiento Preventivo' },
-    { icon: ShieldCheck, title: 'Servicios Generales' },
+    { icon: Wrench, title: 'Mantenimiento Preventivo' },
+    { icon: Briefcase, title: 'Servicios Generales' },
 ];
 
 export const companyStats = [

@@ -1,4 +1,3 @@
-import { Clock3, Mail, MapPin, Phone } from 'lucide-react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Navbar } from '../components/navBar';
@@ -6,44 +5,17 @@ import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { MainLayout } from '../layouts/mainLayout';
 
-const contactInfo = [
-    {
-        icon: Phone,
-        title: 'Teléfonos',
-        lines: ['+51 987 654 321', '+51 912 345 678'],
-    },
-    {
-        icon: Mail,
-        title: 'Email',
-        lines: ['info@asircompany.com'],
-    },
-    {
-        icon: MapPin,
-        title: 'Dirección',
-        lines: ['Av. Los Constructores 123, Oficina 401', 'Urbanización Ingeniería, Lima 15023, Perú'],
-    },
-    {
-        icon: Clock3,
-        title: 'Horario de atención',
-        lines: ['Lunes a viernes: 8:00 - 18:00', 'Sábados: 9:00 - 13:00'],
-    },
-];
-
-const formFields = [
-    { id: 'name', label: 'Nombre', type: 'text', placeholder: 'Tu nombre completo', autoComplete: 'name' },
-    { id: 'email', label: 'Correo', type: 'email', placeholder: 'tu@email.com', autoComplete: 'email' },
-    { id: 'subject', label: 'Asunto', type: 'text', placeholder: 'Motivo de tu consulta', autoComplete: 'off' },
-];
-
 export const ContactPage = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.hash !== '#contact-title') {
+        if (!location.hash) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
 
-        const element = document.getElementById('contact-title');
+        const targetId = location.hash.replace('#', '');
+        const element = document.getElementById(targetId);
 
         if (element) {
             requestAnimationFrame(() => {
@@ -56,19 +28,15 @@ export const ContactPage = () => {
         <MainLayout>
             <Navbar />
             <main className="bg-slate-50 text-asir-navy">
-                <section className="relative isolate overflow-hidden bg-slate-900 py-12">
-                    <div
-                        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('/prueba.jpeg')" }}
-                        aria-hidden="true"
-                    />
+                <section className="relative isolate overflow-hidden bg-slate-900 py-12 md:py-16">
+                    <img src="/prueba.jpeg" alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover" />
                     <div className="absolute inset-0 -z-10 bg-black/60" aria-hidden="true" />
 
-                    <div className="container-custom flex flex-col">
-                        <p className="mb-4 text-sm font-semibold tracking-[0.28em] text-asir-blue uppercase">
+                    <div className="mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-asir-light">
                             Contacto
                         </p>
-                        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                        <h1 id="contact-title" className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                             Estamos listos para ayudarte con tu proyecto
                         </h1>
                         <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
