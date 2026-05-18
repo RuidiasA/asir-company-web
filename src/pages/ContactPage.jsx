@@ -29,7 +29,14 @@ export const ContactPage = () => {
             <Navbar />
             <main className="bg-slate-50 text-asir-navy">
                 <section className="relative isolate overflow-hidden bg-slate-900 py-12 md:py-16">
-                    <img src="/prueba.jpeg" alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+                    <img
+                        src="/aire-acondicionado-industrial.webp"
+                        alt=""
+                        aria-hidden="true"
+                        width="1920"
+                        height="990"
+                        className="absolute inset-0 -z-10 h-full w-full object-cover"
+                    />
                     <div className="absolute inset-0 -z-10 bg-black/60" aria-hidden="true" />
 
                     <div className="mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">

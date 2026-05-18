@@ -6,9 +6,11 @@ export const Hero = () => {
     return (
         <section id="inicio" className="relative flex items-center min-h-[85vh] py-20 lg:py-16 overflow-hidden">
             <img
-                src="/prueba.jpeg"
+                src="/aire-acondicionado-industrial.webp"
                 alt=""
                 aria-hidden="true"
+                width="1920"
+                height="990"
                 className="absolute inset-0 w-full h-full object-cover object-right z-0"
             />
             <div className="absolute inset-0 bg-white/90 md:bg-transparent md:bg-linear-to-r md:from-white md:via-white/90 md:to-transparent z-0" />

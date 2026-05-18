@@ -17,6 +17,7 @@ const contactItems = [
         icon: Phone,
         label: '+51 953 054 689',
         href: 'tel:+51953054689',
+        ariaLabel: 'Llamar por teléfono a ASIR Company al +51 953 054 689',
     },
     {
         id: 'whatsapp',
@@ -24,12 +25,14 @@ const contactItems = [
         label: '+51 953 054 689',
         href: 'https://wa.me/51953054689',
         target: '_blank',
+        ariaLabel: 'Contactar por WhatsApp a ASIR Company al +51 953 054 689',
     },
     {
         id: 'email',
         icon: Mail,
         label: 'm.martinez@asircompany.com',
         href: 'mailto:m.martinez@asircompany.com',
+        ariaLabel: 'Enviar un correo electrónico a ASIR Company',
     },
     {
         id: 'address',
@@ -60,7 +63,13 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
                     <section className="flex max-w-xs flex-col" aria-label="Branding y redes sociales">
                         <Link className="mb-5 inline-flex items-center" to="/" aria-label="ASIR Company EIRL" onClick={handleLogoClick}>
-                            <img src="/logotipo.svg" alt="ASIR Company EIRL" className="h-12 w-auto brightness-0 invert" />
+                            <img
+                                src="/logotipo-asir.webp"
+                                alt="ASIR Company EIRL"
+                                width="327"
+                                height="70"
+                                className="h-12 w-auto brightness-0 invert"
+                            />
                         </Link>
                         <p className="text-sm leading-relaxed text-slate-300">
                             Brindamos soluciones integrales en climatización, refrigeración, ventilación y automatización, con calidad, eficiencia e innovación.
@@ -99,12 +108,17 @@ export const Footer = () => {
                     <section aria-label="Información de contacto">
                         <h3 className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-white">CONTÁCTANOS</h3>
                         <ul className="mt-4 space-y-4">
-                            {contactItems.map(({ id, icon: Icon, label, href, target }) => (
+                            {contactItems.map(({ id, icon: Icon, label, href, target, ariaLabel }) => (
                                 <li key={id} className="flex items-start gap-3">
                                     <Icon className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
                                     <div>
                                         {href ? (
-                                            <a href={href} target={target} className="text-sm leading-relaxed text-slate-300 wrap-break-word hover:text-white">
+                                            <a
+                                                href={href}
+                                                target={target}
+                                                className="text-sm leading-relaxed text-slate-300 wrap-break-word hover:text-white"
+                                                aria-label={ariaLabel}
+                                            >
                                                 {label}
                                             </a>
                                         ) : (

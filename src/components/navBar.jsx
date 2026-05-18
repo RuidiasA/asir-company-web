@@ -46,7 +46,13 @@ export const Navbar = () => {
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-4">
                     <Link className="inline-flex items-center" to="/" aria-label="ASIR Company EIRL" onClick={handleLogoClick}>
-                        <img src="/logotipo-asir.webp" alt="ASIR Company EIRL Logo" className="h-10 w-auto" />
+                        <img
+                            src="/logotipo-asir.webp"
+                            alt="ASIR Company EIRL"
+                            width="327"
+                            height="70"
+                            className="h-12 w-auto"
+                        />
                     </Link>
                 </div>
 

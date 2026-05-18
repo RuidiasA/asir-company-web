@@ -12,7 +12,7 @@ export const Services = () => {
                             className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white px-8 py-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                         >
                             <Icon className="mb-1 h-12 w-12 text-asir-blue transition-transform hover:scale-110" />
-                            <h3 className="mt-4 text-sm font-semibold uppercase tracking-wider text-asir-navy">{title}</h3>
+                            <h2 className="mt-4 text-sm font-semibold uppercase tracking-wider text-asir-navy">{title}</h2>
                         </article>
                     ))}
                 </div>
